@@ -4,7 +4,7 @@ from Common import Assert,Request,read_excel,Tools
 assertions = Assert.Assertions()
 request = Request.Request()
 A = []
-excel_list = read_excel.read_excel_list('../document/用户注册测试用例.xlsx')
+excel_list = read_excel.read_excel_list('./document/用户注册测试用例.xlsx')
 for i in range(len(excel_list)):
     i__pop = excel_list[i].pop()
     A.append(i__pop)
@@ -13,7 +13,7 @@ for i in range(len(excel_list)):
 class Test_zc:
     # @pytest.mark.parametrize('phone,pwd,rePwd,userName,resp',excel_list,ids=A)
     @allure.story('注册模块')
-    @pytest.mark.zc
+
     def test_NUMB(self):
         zc_resp = request.post_request(url='http://192.168.60.132:1811/user/signup',
                                             json={"phone": Tools.phone_num(), "pwd": 'ab12345', "rePwd": 'ab12345',
@@ -26,7 +26,7 @@ class Test_zc:
 
     @allure.story('注册失败')
     @pytest.mark.parametrize('phone,pwd,rePwd,userName,resp', excel_list, ids=A)
-    @pytest.mark.zc
+
     def test_fault(self,phone,pwd,rePwd,userName,resp):
         zc_respo=request.post_request(url='http://192.168.60.132:1811/user/signup',
                                             json={"phone": phone, "pwd": pwd, "rePwd": rePwd,
