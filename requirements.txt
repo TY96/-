@@ -7,7 +7,7 @@ chardet==3.0.4
 colorama==0.4.1
 enum34==1.1.6
 idna==2.8
-lxml==4.3.2
+#lxml==4.3.2
 more-itertools==6.0.0
 namedlist==1.7
 pluggy==0.9.0
@@ -16,4 +16,4 @@ pytest==4.3.1
 requests==2.21.0
 six==1.12.0
 #urllib3==1.24.1
-#xlrd==1.2.0
+xlrd==1.2.0
